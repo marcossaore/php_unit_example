@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Loja\FluxoDeCaixa;
+namespace Loja;
 
 
 class NFDao
@@ -10,6 +10,6 @@ class NFDao
     {
         echo "persistindo nota fiscal";
 
-        return false;
+        return true;
     }
 }

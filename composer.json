@@ -9,13 +9,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "\\Loja\\" : [
-        "src/Loja",
-        "tests/Loja"
+      "Loja\\" : [
+        "src/Loja/",
+        "tests/Loja/"
       ],
-      "\\Exemplos\\" : [
-        "src/Exemplos",
-        "tests/Exemplos"
+      "Exemplos\\" : [
+        "src/Exemplos/",
+        "tests/Exemplos/"
       ]
     }
   },

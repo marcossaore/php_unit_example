@@ -1,30 +1,22 @@
 <?php
 
-require  "../../vendor/autoload.php";
+namespace Loja;
 
 class GeradorDeNotaFiscalTest extends \PHPUnit\Framework\TestCase
 {
 
-    public function testmytest()
-    {
-        $gerador = new \Loja\FluxoDeCaixa\GeradorDeNotaFiscal();
-        //$gerador->gera();$gerador«
-    }
-
     public function testDevePersistirNFGerada()
     {
+        $dao = \Mockery::mock("Loja\NFDao");
+        $dao->shouldReceive("persiste")->andReturn(true);
 
-//        $dao = \Mockery::mock("Loja\FluxoDeCaixa\NFDao");
-//        $dao->shouldReceive("persiste")->andReturn(true);
+        $gerador = new GeradorDeNotaFiscal();
+        $pedido = new Pedido("Andre", 1000, 1);
 
-//        $gerador = new GeradorDeNotaFiscal();
+        $nf = $gerador->gera($pedido);
 
-//        $pedido = new Pedido("Andre", 1000, 1);
+        $this->assertTrue($dao->persiste($nf));
 
-//        $nf = $gerador->gera($pedido);
-
-//        $this->assertTrue($dao->persiste($nf));
-
-//        $this->assertNotNull($nf);
+        $this->assertNotNull($nf);
     }
 }

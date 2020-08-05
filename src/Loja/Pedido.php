@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Loja\FluxoDeCaixa;
+namespace Loja;
 
 
 class Pedido
